@@ -1,6 +1,8 @@
 * IFSP ~ Redes I - Trabalho para aula Assíncrona.
 * Data: 02/09/2021
-* Material mais legível em docx: https://docs.google.com/document/d/1smADT7aBokPECZxzBNJfOOz1-SKoeK9t/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
+* Material mais legível em docx: 
+https://docs.google.com/document/d/1smADT7aBokPECZxzBNJfOOz1-SKoeK9t/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
+
 * Assunto: Topologias (Disposição física da rede) - "grafos físico".
 
 --> Conceito: Layout físico utilizado para conectar os nós de uma rede.
