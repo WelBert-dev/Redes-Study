@@ -1,0 +1,62 @@
+* IFSP ~ Redes I - Trabalho para aula Assíncrona.
+* Data: 23/09/2021
+* Material mais legível em docx: 
+https://docs.google.com/document/d/1ysBowXMrbS9cGUfebVDFe5oh3uuaF3sx/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
+
+* Assunto: Ethernet - 10Base5.
+
+* Referência/alusão a:
+  - 10 Mbits/seg.
+  - Banda base.
+  - 5: 500 metros 
+  
+* Conceito: Surge com a necessidade de melhorias da tecnologia “10Base2” com objetivo de:
+  -  Melhor distribuição geográfica dos hosts/nós. (posicionar os nós de uma maneira mais racional).
+  -  Maior quantidade de hosts/nós na rede.
+  -  Maior distância e alcance da rede (que anteriormente ia até no máximo 185Metros).
+  -  Diminuir desperdício de cabo.
+  
+* Caracteristicas:
+  - Está rede local, utiliza a topologia Bus (Barramento), ou seja, todos os nós estão diretamente conectados a um mesmo meio físico.
+  - Diferente da tecnologia anterior, está é conectado por meio do cabo coaxial RG 8, de 50 ohm de resistência, 
+    que por sua vez vai conectado um cabo “drop-cable”.
+  - Limite de no mínimo 2,50 metros entre um computador e outro.
+  - Máximo total de 500 metros, conectado do roteador até o ultimo computador do segmento.
+  - 100 Computadores no máximo, conectados ao mesmo segmento.
+  
+* Detalhes do meio físico/transporte:
+  --> Engenharia do cabo/meio de transporte dos bits:
+      [Cabo coaxial RG-8 “Back-Boné” -> “Moldem” Tranciver -> Conector DIX/AUI  -> Cabo “drop-cable”]
+
+  - Cabo coaxial RG-8 ganha o nome “Back-Boné” por referência a “Espinha dorsal”, pois se parece com ela a estrutura 
+    na qual vai formando os segmentos conectados a ele.
+  - No cabo coaxial RG-8 “Back-Boné” vai conectado uma espécie de “Moldem” chamado: Trancíver, 
+    na qual será conectado o cabo “Drop-Cable” do host/nó.
+  - A Montagem do cabo na qual irá ser conectado ao host/nó é por meio de um conector “DIX/AUI” conector esse 
+    que é “Crimpado” na ponta do cabo “Drop-Cable” na qual irá por fim levar os bits até o computador/nó host de destino.
+
+* Repetidores:
+  - É possível conectar no final do segmento um "Repetidor" de sinal, podendo assim expandir exponencialmente os nós 
+    conectados ao caba coaxial, desde que respeitando as regras anteriores!
+  - Porém podemos ter o mesmo impasse anterior, aonde os excessos de nós/hosts poderá causar colisão de dados, 
+    já que todos os computadores iriam disputar o barramento (bus) por estarem conectados no mesmo segmento.
+  - Outro impasse também: Ruído da Rede, A cada vez que a sinalização chega no repetidor, ele vai pegar a sinalização elétrica 
+    e dar uma "vitaminada" nela, jogando para o próximo cabo coaxial,  gerando assim pequenos ruídos de fundo, exponencialmente 
+    falando as colisões de nós seriam bem maior.
+    
+* Desta forma, é preciso seguir as mesmas regras da tecnologia “10Base2”:
+  - Podendo ter no máximo 5 segmentos, separados por 4 repetidores,
+  - Tendo apenas 3 segmentos populados, e respeitando as mesmas regras anteriores (500 metros no máximo).
+  
+--> Resumo:
+  - Taxa máxima de transferência: 10 Mbits/seg.
+  - Meio físico: Cabo coaxial RG-8 e drop-cable.
+  - Topologia: Barramento (Bus).
+  - Tamanho do segmento de rede: 500 metros.
+  - Conexão entre nós: Trancíver e placas de redes especiais com conector fêmea “DIX/AUI”.
+  - Número máximo de nós por segmento de rede: 100
+  - Distância mínima entre os nós: 2,50mt
+  - Número máximo de segmentos de rede: 5
+  - Separado por 4 repetidores
+  - Número máximo de segmentos populados: 3
+  
