@@ -1,0 +1,34 @@
+* IFSP ~ Redes II - Anotações pessoais Aulas Presenciais.
+* Data: 10/05/2022
+
+* Assunto: Protocolo RIP - Descobrimento de rotas e compartilhamento delas entre roteadores. 
+
+* Routing internet protocol I
+
+    - Faz uma espécie de broadcast (porém com endereço 224>) para todas as portas.
+    - A Cada 30 segundos manda um "Hello" conténdo todas rotas cadastradas.
+    - Destinátario verifica as mudanças em relação ao que ele ja possui e atualiza tabela.
+    - Informações que ele ja possui é descartada, só é utilizado em caso de rotas menos custosas 
+      para um mesmo destinatário que anteriormente era uma rota mais "cara".
+    
+    - Convergência: tempo necessário que os roteadores utiizando um protocolo de descobrimento 
+      de rotas para atualizar suas tabelas.
+
+    - Problemas: Flooding na rede, insegurança por não ocorrer validações no processo
+
+* RIP II:
+
+    - Acrescenta: Autenticação sendo ela a credencial do roteador visinho (melhorando a segurança).
+    - Informações criptografadas.
+
+    - Problema Counting to infinity soluções: 
+        - Poison reverse (antidoto): roteador desligado não envia hello automaticamente vai repassar 
+          oque recebeu porém ja com o peso 15 matando todas ocorrências.
+
+        - Split horizon: não devolve oque recebeu automaticamente vai matando o roteador em cadeia(solução default).
+
+* Ordem de prioridade:
+    - 1 Diretamente conectado
+    - 2 Rotas cadastradas
+    - 3 RIP ou outro protocolo de descobrimento de rotas
+    - 4 Por ultimo caso o default gateway

@@ -1,0 +1,38 @@
+* IFSP ~ Redes II - Anotações pessoais Aulas Presenciais.
+* Data: 07/06/2022
+
+* Assunto: DNS - Resolução de Nomes (parsing de endereço string em IP).
+
+* Formas de obter um endereço IP:
+	- 1ª: Broadcast (Local) (Quem tem tal ip? RIP, RIP2, OSPF).
+	- 2ª: Hosts ja cadastrados. (Consultando a tabela ARP).
+	- 3ª: DNS.
+
+* DNS: Domain Name Service
+
+* Servidor Forwarder: Intranets (servidores que re-passam as requisições de resolução, e guarda um chash das resoluções ja consultadas)
+
+* Servidor Não Forwarder: 
+	- Autoritativo: Servidor DNS que mantem no banco de dados os dominios e seus devidos IP's
+		- Devemos registrar 2 servidores sendo eles:
+			- Primario/Master: 
+			- Secundário/Slave:
+		* SOA (Start Of Authoritative):
+			- Versão:
+			- Intervalo de atualização: 2hr
+			- Intervalo de tentativa: 30M
+			- Intervalo de expiração: 10
+				A -> nome -> IP.
+				CName -> Alias do "A".
+
+	- Não Autoritativo: Servidor DNS que não mantem em seu banco de dados e assim:
+		- Faz a resolução recursiva de cada subdominio: (slt.ifsp.edu.br)
+			- Consulta br e br devolve (edu, mil, com ...)
+				- Consulta edu e edu devolve (bla bla bla e ifsp)
+						- Consulta ifsp e devolve (bla bla bla)
+							- Até chegar no host destino
+		
+FQDN: Fully Qualified Domain Name, ou em Português, Nome de Domínio Completamente Qualificado.
+
+* O Conjunto de registros (banco de dados) do servidor DNS Autoritativo é chamado de "Zona"
+* Transferencia de zona (TCP porta 53) quando o secundário pede para o primário e ele manda a atualização para o slave.

@@ -1,0 +1,64 @@
+* IFSP ~ Redes II - Anotações pessoais Aulas Presenciais.
+* Data: 17/05/2022
+
+* Assunto: Protocolo RIP - Descobrimento de rotas e compartilhamento delas entre roteadores.
+
+- Eleição de roteador DR: principal, responsável por seder as alterações para outros roteadores.
+- Os roteadores pedem e o DR manda.
+- Em caso de problemas com o DR um back-up é utilizado "BDR" até o DR voltar a funcionar.
+- Em caso de dois BDR's com mesmo nível, mac address mais alto é escolhido (Mais novo) logo: melhor.
+- Peso: ticks (preço de pedágio) (2^16 max).
+
+* Portas mais importantes do serviço TCP:
+
+    20 - FTP
+    21 - FTP
+    22 - SSH 
+    23 - Telnet
+    25 - SMTP 
+    53 - DNS (SERVIDOR)
+    80 - Web HTTP
+    110 - POP3 (Email)
+    137 - Microsoft SMB
+    139 - Microsoft SMB
+    443 - Web HTTPS
+
+* Portas mais importantes do serviço UDP:
+
+    53 - DNS (SERVIDOR)
+
+* Diferença entre RIP e OSPF:
+
+
+    1 - RIP: significa protocolo de informações de roteamento.	
+        OSPF: significa Open Shortest Path First.
+
+    2 - RIP: funciona no algoritmo Bellman Ford.	
+        OSPF: funciona no algoritmo Dijkstra.
+
+    3 - RIP: É um protocolo de vetor de distância e usa a distância ou a contagem de saltos para 
+             determinar o caminho de transmissão.	
+        OSPF: É um protocolo de estado de link e analisa diferentes fontes, como velocidade, custo 
+              e congestionamento do caminho, enquanto identifica o caminho mais curto.
+
+    4 - RIP: É basicamente usado para organizações de menor porte.	
+        OSPF: É basicamente usado para organizações de maior porte na rede.
+
+    5 - RIP: Permite um máximo de 15 saltos.	
+        OSPF: Essa restrição não existe na contagem de saltos.
+
+    6 - RIP: Não é um protocolo de roteamento dinâmico mais inteligente.	
+        OSPF: É um protocolo de roteamento mais inteligente do que o RIP.
+
+    7 - RIP: As redes são classificadas como áreas e tabelas aqui.
+        OSPF: As redes são classificadas como áreas, subáreas, sistemas autônomos e 
+        áreas de backbone aqui.
+
+    8 - RIP: Sua distância administrativa é de 120.	
+        OSPF: Sua distância administrativa é de 110.
+
+    9 - RIP: Usa o protocolo UDP (User Datagram Protocol).	
+        OSPF: OSPF funciona para o protocolo IP (Internet Protocol).
+
+    10 - RIP: Ele calcula a métrica em termos de contagem de saltos.
+         OSPF: Ele calcula a métrica em termos de largura de banda.

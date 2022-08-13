@@ -1,0 +1,37 @@
+* IFSP ~ Redes II - Anotações pessoais Aulas Presenciais.
+* Data: 31/05/2022
+
+* Assunto: Servidor DHCP - Ip Automático
+
+* Procedimento inicial para atribuição DHCP (4pacotes):
+
+	CLIENTE       SERVIDOR
+	--------------------->
+	DHCP - DISCOVERY (tipo um broadcast)
+	<---------------------
+	DHCP - OFFER
+	--------------------->
+	DHCP - REQUEST
+	<---------------------
+	DHCP - ACK (OK do servidor quando o cliente não tem um IP)
+
+
+* Cria uma faixa (range) 
+* Mascara:
+* Servidor DNS
+* Default gateway
+* Tempo de concessão: 4hrs 
+	- concessão: 12:00hrs
+	- 1ª tentativa: 14:00hrs (UNICAST)
+	- 2ª tentativa: 15:hrs (UNICAST)
+	- 3ª tentativa: 15:30hrs (UNICAST)
+	- 4ª tentativa: 15:45hrs (UNICAST)
+	- Release as 16:00hrs (reinicio de broadcast por um endereço novo).
+	- ou seja: sempre faz o pedido novamente na metade do tempo que falta para expirar o IP.
+	RENOVAÇÃO:
+	CLIENTE       SERVIDOR
+	--------------------->
+	DHCP - RENEW -> UNICAST
+	<---------------------
+	DHCP - ACK -> UNICAST (OK do servidor quando o cliente ja tem um IP atribuido logo, ele sabe quem será o destinatário).
+    
