@@ -1,0 +1,48 @@
+* IFSP ~ Redes I - Trabalho para aula Assíncrona.
+* Data: 09/09/2021
+* Material mais legível em docx: 
+https://docs.google.com/document/d/1NcSKQtJTYogoNOk0djOok8qopACF3HEM/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
+
+* Assunto: Ethernet - 10Base2.
+
+* Referência/alusão a:
+  - 10 Mbits/seg.
+  - Banda base.
+  - 2: 200 metros (185Metros mais corretamente "10Base185").
+  
+* Caracteristicas:
+  - Esta rede local, utiliza a topologia Bus (Barramento), ou seja, todos os nós estão diretamente conectados a um mesmo meio físico.
+  - Conectado ao cabo coaxial RG58, de 50 ohm de resistência.
+  - Limite de no mínimo 50cm entre um computador e outro.
+  - Máximo total de 185 metros, conectado do roteador até o ultimo cumputador do segmento.
+  - 30 Computadores no máximo, conectados ao mesmo segmento.
+  
+* Detalhes do meio fisico:
+  - Nós conectados por meio de um conector BNC ("T"), "T" conectado a uma placa de rede.
+  - No ultimo nó, da estremidade final é conectado na ponta sobra do "T" um "Terminator" que serve para fechar 
+    o circuito e evitar ruído por meio de retorno do sinal. 
+  - Construção do cabo coaxial: Condutor no núcleo, isolação cobrindo o condutor, blindagem "malha" cobrindo a isolação, 
+    e uma cobertura de PVC/Borracha na camada final.
+  - É possível conectar no final do segmento um "Repetidor" de sinal, podendo assim expandir exponencialmente os nós 
+    conectados ao coba coaxial, desde que respeitando as regras anteriores!
+  - Impasse disto é: Exesso de nós causa colisão de dados, ja que todos os computadores iriam disputar o barramento (bus) 
+    por estarem conectados no mesmo segmento.
+  - Impasse tambem: Ruído da Rede, A cada vez que a sinalização chega no repetidor, ele vai pegar a sinalização eletrica 
+    e dar uma "vitaminada" nela, jogando para o próximo cabo coaxial,  gerando assim pequenos ruídos de fundo, 
+    exponencialmente falando as colisões de nós seriam bem maior.
+    
+* Desta forma, é preciso seguir uma regra:
+  - Podendo ter no máximo 5 segmentos, separados por 4 repetidores,
+  - Tendo apenas 3 segmentos populados, e respeitando as mesmas regras anteriores (185 metros no máximo).
+  
+--> Resumo:
+  - Taxa máxima de transferência: 10 Mbits/seg
+  - meio físico: Cabo coaxial RG-58
+  - Topologia: Barramento (Bus)
+  - Tamanho do segmento de rede: 185 metros
+  - Conexão entre nós: Conector BNC ("T").
+  - Numero máximo de nós por segmento de rede: 30
+  - Distância mínima de cabo entre os nós: 50cm
+  - Numero máximo de segmentos de rede: 5
+  - Número máximo de repetidores: 4
+  - Número máximo de segmentos populados: 3
