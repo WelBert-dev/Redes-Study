@@ -1,0 +1,49 @@
+* Data: 22/11/2021
+* Material mais legível em docx: 
+https://docs.google.com/document/d/19A3ZwY7HP9rtjHE-4Oz6tZ9mE9Uawzk4/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
+
+* Assunto: Ethernet IEE802 - Definição - Estudos pessoais realizados na época.
+
+* Conceituando: Ethernet é um “Padrão” utilizado em redes locais (LAN) aonde é definido protocolos da camada 1 e 2 do modelo OSI (Físico e Enlace), 
+  sendo evoluído para 4 “Tipos”: Standard Ethernet, Fast Ethernet, Giga Ethernet e 10 Giga Ethernet.
+  
+  - A ideia inicial do Ethernet era ser “Plug-And-Play" (Ligou já está funcionando), ou seja, facilitar a vida do usuário uma vez que nem todos 
+    tem o conhecimento técnico para configurar uma rede (Ethernet iniciou-se para redes domesticas comuns) aonde ele define as configurações 
+    e os protocolos afim de auto-configuração.
+    
+  - OBS: Ethernet NÃO FUNCIONA BEM em redes na TOPOLOGIA ANEL, devido ao “Storm broadcast”, aonde, ao sinalizar broadcast os repetidores 
+    fazem um looping infinito travando a rede toda, para mais informações: 
+    https://www.youtube.com/watch?v=vlJN_oKkQRk&list=PLy_9Ks9_s8qGg9yyzkJxM_UY8vYblF0s8&index=4
+
+
+* Standard Ethernet (10Mbits/s): Obs: Imagens ilustrativas no docx.
+  - Foi o primeiro modelo Ethernet, bem simples sem controle de fluxo (como é para redes domesticas não é necessário um controle tão amplo).
+  - Sem conexão, não-confiável. (envia o frame e torce para chegar, sem confirmação).
+  - Não garante que quem está enviando é mesmo o MACADRESS contido no cabeçalho, ou seja, a camada Física e Enlace não garante essas verificações 
+    ficando a cargo das camadas superiores (TCP/IP).
+
+  - MTU (Maximum transport unit): Define o máximo de carga que um frame pode carregar (para evitar que uma única estação ocupe o meio por muito tempo).
+  - Topologia: Barramento (Bus) com terminadores para evitar o “eco” nas extremidades, Hub (Estrela) aonde é concentrado um hub e simula uma topologia 
+    barramento (todos “escutam”) porém pouco utilizado hoje em dia (Mais utilizado como repetidor de sinal).
+    
+   - Ethernet em camada Física (Tecnologias): 10Base2 (STD), 10Base5(STD), 10BaseT, 10BaseF.
+   
+   
+* Fast Ethernet (100Mbits/s): Obs: Imagem ilustrativas no docx.
+  - Surgindo na década de 90.
+  - Compatibilidade com Standard Ethernet. (ou seja, possui o mesmo frame, mesmo tamanho máximo e mínimo de frame, com a diferença de que começa a entrar 
+    em desuso a topologia de barramento (bus), cai em desuso também, a utilização de hubs pois aqui começa a se utilizar switchs).
+  - 1995: IEE 802.3u (FastEthernet 100Base-tx, 100Base-T4,  100Base-fx)
+  - 1997: IEE 802.3x (Suporte a FullDuplex e Controle de fluxo).
+  
+  
+* Giga Ethernet (1.000Mbits/s): Obs: Imagem ilustrativa no docx.
+  - Fullduplex 1Gbits/s EM CADA PORTA.
+  - IEEE 802.3z (GigaEthernet 1000Base-X).
+  - IEEE 802.3ab (GigaEthernet 1000Base-T).
+  - Mais informações na “7-Ethernet-10-100-1000-Base-T-TX-Redes1”.
+  
+
+* 10 Giga Ethernet (10.000Mbits/s): Obs: Imagem ilustrativa no docx.
+  - IEEE 802.3ae (10GBase-SR/LR/ER/SW/LW/EW) <- mais comum de se utilizar fibra optica na transferência dos bits.
+  - IEEE 802.3an (10GBase-T) <- menos comum utilizar “eletricidade” pois sai mais caro (Cat 6 pra cima a metragem é cara).
