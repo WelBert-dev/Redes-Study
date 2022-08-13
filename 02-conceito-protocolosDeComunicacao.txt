@@ -1,8 +1,11 @@
-* IFSP ~ Prof Becker - Redes I
+* IFSP ~ Redes I - Trabalho para aula Assíncrona.
 * Data: 19/08/2021
-* Material mais legível em docx: https://docs.google.com/document/d/1Fo01f4MPL36Vveohcoulz7pfsiYwYq6e
+* Material mais legível em docx: 
+https://docs.google.com/document/d/1Fo01f4MPL36Vveohcoulz7pfsiYwYq6e/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
 
-----> Conceituando: 
+* Assunto: Conceito/Explicação sobre oque seriam Protocolos de comunicação. (Más não demonstrando eles ainda).
+
+--> Conceituando: 
 
 Em uma comunicação, deve se estabelecer que os dois ou mais indivíduos devem conhecer a forma 
 ou o critérios de linguagem que ali se estabelece, como confirmações verbais (vícios de linguagens) 
