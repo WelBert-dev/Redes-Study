@@ -1,0 +1,21 @@
+* IFSP ~ Prof Becker - Redes I
+* Data: 19/08/2021
+* Material mais legível em docx: https://docs.google.com/document/d/1Fo01f4MPL36Vveohcoulz7pfsiYwYq6e
+
+----> Conceituando: 
+
+Em uma comunicação, deve se estabelecer que os dois ou mais indivíduos devem conhecer a forma 
+ou o critérios de linguagem que ali se estabelece, como confirmações verbais (vícios de linguagens) 
+“Né”, “Aham”, “Ok”, entretanto o “Protocolo” seria um conjunto de regras aonde todos indivíduos 
+da conversa tem entendimento sobre! Neste exemplo os indivíduos devem conhecer algumas gírias locais, 
+e falarem o idioma Português!
+Nos primórdios temos por exemplo: Código morse, sinais de fumaça, Telegrafo chappe, Bandeiras romanas, e etc.. 
+Aonde todos indivíduos envolvidos tem conhecimento da “linguagem” que está sendo utilizada.
+Portanto, já no mundo da informática (T.I) os dispositivos interligados, devem conhecer os protocolos 
+que estão sendo utilizados nas trocas de informações/dados, existem vários protocolos envolvidos para cada finalidade
+um deles bem famoso é a pilha de protocolos TCP/IP aonde se dá a base da internet 
+(todos computadores da rede possui um IP único para garantir que o emissor e o receptor sejam os destinatários corretos
+das requisições efetuadas na rede.)
+
+Resumindo: Protocolo é um conjunto de regras/critérios de comunicação, aonde todos indivíduos envolvidos 
+tem conhecimento de tal, para que seja estabelecido uma comunicação coerente!
