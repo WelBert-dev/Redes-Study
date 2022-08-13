@@ -1,0 +1,52 @@
+* IFSP ~ Redes I - Trabalho para aula Assíncrona.
+* Data: 26/08/2021
+* Material mais legível em docx: https://docs.google.com/document/d/1TGlJiNngMPivQqYZAAXiNUSiI1OHuBjY/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
+* Assunto: As famosas camadas dos modelos DOD(4)Old e OSI(7)Current.
+
+* Modelo DOD(TCP/IP):
+  
+  --> Ano de surgimento: 1970 (Pai do modelo atual OSI)
+  
+  --> Conceituando:  
+    Surgiu em conjunto com o desenvolvimento da suíte de protocolos TCP/IP 
+    (TCP/IP surge com objetivo de unificar computadores militares na época da guerra fria), 
+    com objetivo de “simplificar” e definir a atuação do protocolo “pai” da internet, aonde
+    se origina toda conexão de rede, conceito esse que separa e classifica camadas, 
+    aonde quanto mais próximo do hardware mais baixa é a camada!
+  
+  --> Tabela de Camadas - Modelo DoD(TCP/IP): 
+    Camada 4: Aplicação (Software) 
+      - Exemplos: Aplicação final, códigos/dados enviados via Emissor -> Receptor aonde a informação é disponibilizada/originada
+    Camada 3: Transporte
+      - Exemplos:  Trata do transporte, UDP ou TCP, tratando ou não de possíveis errors no caminho
+    Camada 2: Rede (Inter redes, ou internet) 
+      - Exemplos: Trata do endereçamento (ARP), do Emissor e do Receptor
+    Camada 1: Física (Hardware)
+      - Exemplos: Cabos, conectores, repetidores, bit, e etc...
+      
+      -- Obs: Com a evolução da tecnologia, a observação e tratamento passa a ser mais detalhada 
+      então eis que surge o novo modelo de referência:
+      
+      
+* Modelo OSI (Open Systems Interconnections) - Utilizado hoje em dia:
+
+  --> Ano de surgimento: 1977
+  
+  --> Conceituando:  
+    Modelo com os mesmos fundamentos do DoD, porém mais detalhada devido a evolução da tecnologia e interconexões, 
+    aonde foi retirada e particionada melhor em referência ao modelo anterior, dividindo em 2 abstrações 
+    no modelo da camada 1 (Física) retirando a parte lógica, sendo ele agora: Física e Enlase; 
+    - As camadas 2 (Rede) e 3 (Transporte) continuam com as mesmas características; 
+    - E divide também a camada 4 (Aplicação) sendo ela particionada em 3 abstrações:  Sessão,  Apresentação e Aplicação.
+    
+  --> Tabela de Camadas – Modelo OSI(TCP/IP):
+    Camada 7: Aplicação (Software) Por fim, disponibiliza ou encaminha os dados trocados com a Aplicação.
+    Camada 6: Apresentação Atua como intermediário entre a camada anterior e a camada acima, convertendo/formatando assim padrões utilizados em países distintos (ASCII, EBCDIC).
+    Camada 5: Sessão Responsável por determinar o início e o fim de uma conexão.
+    
+    Camada 4: Transporte Continua Igual ao modelo anterior, (UDP ou TCP) tratando ou não dos errors.
+    
+    Camada 3: Rede Continua igual ao modelo anterior, a atribuição de IP dos indivíduos interligados.
+    
+    Camada 2: Enlase Parte lógica retirada da camada a baixo, Tudo que se relaciona a “Tomada de decisão” da parte física, sendo eles exemplos: Placa de rede, switch e etc...
+    Camada 1: Física Continua igual ao modelo anterior, porém retira a parte lógica da coisa!
