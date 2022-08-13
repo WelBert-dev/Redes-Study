@@ -1,0 +1,56 @@
+* IFSP ~ Redes I - Trabalho para aula Assíncrona.
+* Data: 04/11/2021
+* Material mais legível em docx: 
+https://docs.google.com/document/d/1UhWbmS1cbjncDxt8R3yw3WmSgR4xStBO/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
+
+* Assunto: Ethernet - MacAddress (Endereço físico do hardware).
+
+* Ethernet: Mais informações em "08-Ethernet-Definicao-EstudosPessoais.txt".
+  É uma tecnologia de rede local (LAN(Local Area Network) de mídia compartilhada) aonde, todas as estações de um segmento compartilham 
+  a mesma banda para envio de pacotes, sendo assim, os dados são fragmentados e enviados em formato de frames.
+  
+  - Classificado como protocolo de enlace na sub-camada de rede MAC, executando funções da camada de nível 1 e 2 do modelo OSI.
+  - A Ethernet transmite frames de tamanhos variáveis entre 72 e 1518 bytes de comprimento, cada frame contém um cabeçalho com os 
+    endereços das estações de origem e destino, os dados e um campo para a correção de erros (CSMA/CD).
+  - A Ethernet usa a tecnologia de CSMA/CD para transmitir os frames sobre o meio físico (par trançado, fibra, e etc...)
+
+* MacAddress:
+  Trata-se da identificação da placa de rede, aonde é chamado de "Endereço físico" do nó da rede, uma vez que, na mesma rede "LAN" podem possuir 
+  +1 Host/Nó conectado, é preciso saber qual equipamento fez a requisição na web, para devolve-la corretamente e para isso cada equipamento 
+  (Placa de rede) possuí um endereço MAC ÚNICO definido pelo fabricante.
+  - Os endereços Mac são usados como endereço físicos para a maioria das tecnologias do padrão IEE 802, como por exemplo Ethernet e Wi-Fi.
+  - Também é conhecido como BIA (Burned-in Address), ou ainda como “Endereço de Hardware” ou “Endereço Físico”.
+  - É possível programar um endereço de hardware, utilizando softwares específicos instalados no host, de modo a forçar a interface de rede a 
+    utilizar um endereço diferente (mas sem alterar o endereço original, que continua gravado na interface ROM!).
+  - Também são utilizadas as nomenclaturas: MAC-48; EUI-48; e outra, porém com 64 bits: EUI-64 (O Padrão IEEE 802 recomenda utilizar a 
+    nomenclatura “EUI-48” pois a outra terminologia é considerada obsoleta).
+  - É comum utilizar o termo “MAC-48” para equipamentos de hardware de rede, e “EUI-48” para outros dispositivos e também para software 
+    (Apesar de ambos se tratar da mesma tecnologia).
+  - Um nó de rede, como um computador, pode possuir várias placas de rede instaladas, e cada placa terá seu próprio endereço MAC. Além disso, 
+    existem placas de rede com múltiplas interfaces (tipicamente 2 ou 4), e cada interface na placa também terá seu próprio MAC address.
+    
+  * Identificação MacAddress no padrão Ethernet (48Bits ao todo): É representado por 6 grupos de 2 dígitos hexadecimais (1 byte por grupo), 
+    somando 6 bytes, separados por dois pontos ":", (obs: pontos esses que são utilizados apenas para melhorar a leitura aos olhos humanos, 
+    não fazendo parte do endereço na sua essência) exemplo: 00:18:BE:C1:F4:E2, sendo assim:
+    - Os 3 Primeiros bytes (3 primeiros grupos, 6 primeiros dígitos) também conhecidos como endereço OUI (Organizationally Unique Identifier) 
+      que indicam o fabricante, é definido pelo órgão regulamentador IEEE 802. 
+    - E os outros 3 grupos (6 dígitos) restantes é definido pela fabricante da placa de rede.
+    
+    
+* Ethernet-Frames:
+  - Um Frame Ethernet é uma unidade de dados do protocolo da camada de enlace.
+  - Utilizando os mecanismos de transporte da camada subjacente, na camada física ethernet.
+  - Resumidamente o frame serve para organização da sequência de bits/pulsos elétricos na rede local, uma vez que a transmissão é binária, 
+    será preciso um padrão pré-definido para que a comunicação possa ocorrer, sendo assim o frame é composto por:
+    
+        [Preâmbulo][Mac Address - Destino][Mac Address - Origem][Tipo (Type)][Dados][CRC]
+
+      - Preâmbulo (8Bytes): É um campo utilizado para a sincronização, ou seja, o início do pacote (um “carimbo” do frame).
+      - Mac Address Destino (6Bytes) e Origem (+6Bytes): Identificam as placas de redes de Destino e Origem, respectivamente, 
+        para que o pacote/requisição chegue ao destinatário e seja devolvida para o emissor.
+      - Type (2Bytes): Identifica o protocolo da camada superior (Exemplo: TCP/IP...)
+      - Dados (46-1500Bytes) : São a carga útil, ou seja, aquilo que desejamos transmitir em sí.
+      - CRC (Cyclic Redundance Check) (4Bytes): Algoritmo cuja função é garantir acuracidade do frame ao todo, aonde é realizado
+        um cálculo com todos os bits do frame, e o resultado é encapsulado no próprio frame em sí, assim o destinatário refaz o 
+        mesmo cálculo e compara com o resultado que chegou, garantindo assim que seja detectado a perca ou a modificação do frame 
+        durante seu transporte pelo meio físico, em caso de não acuracidade por segurança o frame é descartado.
