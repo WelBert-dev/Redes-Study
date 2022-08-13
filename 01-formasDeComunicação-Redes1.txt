@@ -1,0 +1,31 @@
+* IFSP ~ Prof Becker - Redes I
+* Data: 19/08/2021
+* Material mais legível em docx: https://docs.google.com/document/d/1cHegRFD3SiNG5ow9JWvtpVZRpt1FTzP9
+
+* Teoria da Comunicação: Emissor -> Mensagem -> Canal -> Receptor
+
+----> TIPOS DE TRANSMISSÃO: 
+
+  * Broadcast: Todas pessoas recebendo a mensagem simultaneamente pelo mesmo emissor.
+Exemplo citado: Uma sala de aula, aonde o emissor (professor) transmite a mensagem direcionada ao grupo de pessoas (classe) receptores.
+Logo, na informática o conceito broadcast se refere ao envio de uma informação para todos conectados na mesma rede (LAN) um exemplo de broadcast é o protocolo ARP (Address Resolution Protocol). 
+
+  * Multicast: Um grupo x de pessoas dentre um todo, recebendo a mensagem simultaneamente pelo mesmo emissor.
+Exemplo citado: Na mesma sala de aula do exemplo anterior, porém direcionado a um grupo x de pessoas seguindo um critério x (Todos da direita, todos do fundo...)
+Logo, na informática o conceito Multicast se refere ao envio de informação para um grupo x de pessoas, um exemplo deste conceito é as reuniões no google meet (sala virtual) durante nossas aulas EAD, aonde o emissor (Professor) compartilha vídeo-chamada com os receptores (Alunos) conectados no mesmo Link.
+
+  * Unicast: Um único emissor para um único receptor.
+Exemplo: Uma mensagem enviada no whatsapp e etc...
+
+----> SENTIDO DA TRANSMISSÃO:
+
+  * Simplex: Comunicação unidirecional, ou seja a mensagem sempre parte do emissor para o receptor, sem alternações de papel.
+Exemplos citados: Tv, rádio, placas de sinalização...
+Duplex: Comunicação multidirecional, hora emissor vira receptor e vice-versa ou seja, os papeis são trocados ao longo da comunicação.
+Aonde a comunicação pode ser simultânea (Full-Duplex) ou alternada (Half-Duplex)
+
+  * Half-Duplex: Comunicação alternada, como um walk talk, primeiro um fala enquanto o outro ouve, e depois o contrário, 
+aonde não é possível os dois falarem ao mesmo tempo.
+  
+  * Full-Duplex: Comunicação simultânea, como em uma conversa via telefone aonde é possível os dois falarem ao mesmo tempo sem interferências.
+  
