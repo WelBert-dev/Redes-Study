@@ -1,10 +1,13 @@
-* IFSP ~ Prof Becker - Redes I
+* IFSP ~ Redes I - Trabalho para aula Assíncrona.
 * Data: 19/08/2021
-* Material mais legível em docx: https://docs.google.com/document/d/1cHegRFD3SiNG5ow9JWvtpVZRpt1FTzP9
+* Material mais legível em docx: 
+https://docs.google.com/document/d/1cHegRFD3SiNG5ow9JWvtpVZRpt1FTzP9/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
 
-* Teoria da Comunicação: Emissor -> Mensagem -> Canal -> Receptor
+* Assunto: Formas de Comunicação em Redes (BroadCast, MultiCast, UniCast) e Sentido da Comunicação (Simplex, Half-Duplex, Full-Duplex).  
 
-----> TIPOS DE TRANSMISSÃO: 
+* Teoria da Comunicação: [Emissor] -> <Mensagem> -> <Canal> -> [Receptor]
+
+--> TIPOS DE TRANSMISSÃO: 
 
   * Broadcast: Todas pessoas recebendo a mensagem simultaneamente pelo mesmo emissor.
 Exemplo citado: Uma sala de aula, aonde o emissor (professor) transmite a mensagem direcionada ao grupo de pessoas (classe) receptores.
@@ -17,7 +20,7 @@ Logo, na informática o conceito Multicast se refere ao envio de informação pa
   * Unicast: Um único emissor para um único receptor.
 Exemplo: Uma mensagem enviada no whatsapp e etc...
 
-----> SENTIDO DA TRANSMISSÃO:
+--> SENTIDO DA TRANSMISSÃO:
 
   * Simplex: Comunicação unidirecional, ou seja a mensagem sempre parte do emissor para o receptor, sem alternações de papel.
 Exemplos citados: Tv, rádio, placas de sinalização...
@@ -28,4 +31,3 @@ Aonde a comunicação pode ser simultânea (Full-Duplex) ou alternada (Half-Dupl
 aonde não é possível os dois falarem ao mesmo tempo.
   
   * Full-Duplex: Comunicação simultânea, como em uma conversa via telefone aonde é possível os dois falarem ao mesmo tempo sem interferências.
-  
