@@ -1,0 +1,77 @@
+* IFSP ~ Redes I - Trabalho para aula Assíncrona.
+* Data: 04/11/2021
+* Material mais legível em docx: 
+https://docs.google.com/document/d/1e45vVuj-WoRvii6-HwfdrhbETvZoup-E/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
+
+* Assunto: Ethernet - CSMA/CD & CSMA/CA.
+
+* Conceituando: 
+  - CSMA/CD (Carrier Sense Multiple Access with Collision Detection) é um sistema/software/algoritmo cuja função é gerenciar/organizar 
+    a transmissão de dados em uma rede LAN Ethernet, afim de tratar/detectar possíveis colisões de dados durante as trocas de 
+    frames/quadros entre os dispositivos locais (operando na camada 2 de “Enlace” do modelo OSI), na qual operam na topologia 
+    Bus (barramento), ou seja, todos computadores conectados ao mesmo barramento.
+    
+  - Para entendermos o que é CSMA/CD ou CSMA/CA precisamos entender o passado das redes de computadores, como já visto nas aulas 
+    anteriores sobre Topologias, a Bus (Barramento) pela forma como ela opera é bem suscetível a possíveis colisões de dados por 
+    conter mais de um host/nó compartilhando o mesmo barramento, ou também em redes wireless (aonde existe mais de um aparelho 
+    conectado ao wi-fi, disputando assim a “atenção” do roteador/repetidor), e para isto surge a necessidade de algoritmos para
+    correção destas eventuais situações, além disto também precisamos relembrar os primeiros aparelhos utilizados para gerenciamento
+    dos frames/quadros que são trafegados pela rede local LAN, sendo ele o hub.
+    
+  - Hub: O Hub é um equipamento bem antigo, e foi um dos primeiros aparelhos utilizados por empresas para a comunicação local (LAN) 
+    entre os computadores, basicamente ele conecta os computadores/hosts/nós da rede local possibilitando assim a troca de informações. 
+    Porém é exatamente nesta transmissão de dados que está seu ponto fraco:  Ao pegar a informação de um computador emissor para enviar 
+    ao computador receptor, o hub apenas repete ela a TODAS portas conectadas afim de encontrar o destinatário, ou seja, seria o mesmo 
+    que todos os hosts/nós da rede estivessem no mesmo barramento (Bus) pois toda a troca de informações são repetidas a todos os 
+    barramentos conectados ao hub, causando assim um tráfego enorme na rede, gerando bastante colisões de dados e colocando em risco
+    a segurança, por enviar as informações/quadros/frames a TODOS os computadores conectados a ele.
+
+
+* CSMA/CD:
+  - Camada do Modelo OSI: 2 – Enlace (Na subcamada MAC).
+  - Surgimento histórico: Anos 60.
+  
+  - CS (Carrier Sense): Capacidade de identificar se está ocorrendo transmissão, ou seja, o primeiro passo na transmissão de dados 
+    numa rede Ethernet é verificar se o cabo está livre.
+  - MA (Multiple Access): Capacidade de múltiplos nós concorrerem pela utilização da mídia, ou seja o protocolo CSMA/CD não gera 
+    nenhum tipo de prioridade (daí o nome de Multiple Access, acesso múltiplo). Como o CSMA/CD não gera prioridade, pode ocorrer
+    de duas placas tentarem transmitir dados ao mesmo tempo. Quando isso ocorre, há uma colisão e nenhuma das placas consegue transmitir dados.
+  - CD (Collision Detection): É responsável por identificar colisões na rede.
+  
+  - Mais utilizada em: Redes com fio (Ethernet), NÃO RECOMENDADO para redes wireless!
+  
+  * Funcionamento: 
+    - O CSMA/CD identifica quando o meio (canal) está disponível (idle time) para a transmissão. Neste momento a transmissão é iniciada. 
+    - O mecanismo CD (Collision Detection - Detecção de Colisão), ao mesmo tempo, obriga que os nós escutem a rede enquanto emitem dados, 
+      razão pela qual o CSMA/CD é também conhecido por (LWT) "Listen While Talk" - "escute enquanto fala".
+    - Se o mesmo detecta uma colisão, toda transmissão é interrompida e é emitido um sinal (“jam” de 48 bits) para anunciar que ocorreu
+      uma colisão. É interessante ser salientada real importância do sinal JAM. Ele é usado pois pode ocorrer se caso dois host, A e B, 
+      enviem mensagens ao mesmo tempo, colidam e que o sinal da colisão seja tão fraco que acabe não chegando ao outro host, por isto é 
+      enviado o sinal JAM. Ou seja, o sinal jam garante que ambos os hosts irão detectar a colisão e então calcular aleatoriamente o tempo
+      de back-off exponencial(tempo de espera). Para evitar colisões sucessivas o nó espera um período de acordo com o back-off exponencial
+      e volta a tentar transmitir.
+      
+  * Detecção das colisões:
+    - Como o CD tem a capacidade de “ouvir” enquanto “fala”, o mesmo compara se a amplitude do sinal recebido é a mesma do sinal enviado. 
+      Desta forma, quando se “ouve” algo diferente do que foi “dito”, é identificada uma colisão.
+      
+    - Mesmo contendo esta capacidade de “Ouvir” o meio físico antes de começar a transmissão, como o sinal demora algum tempo para atingir 
+      todas as estações, existe uma possibilidade considerável de que outra estação "escute" o cabo antes do sinal chegar até ela, pense 
+      que o cabo está livre e também transmita dados. Neste caso as duas transmissões colidirão em algum ponto do cabo. A estação que estiver
+      mais próxima, a primeira a detectar a colisão, emitirá um sinal de alta frequência que anula todos os sinais que estiverem trafegando 
+      através do cabo e alerta as demais estações sobre o problema. Ao receberem o sinal, todas as estações param de transmitir dados/frames/quadros 
+      por um micro período de tempo aleatório. Com isto, os dados voltam a ser transmitidos, um frame/quadro por vez, tempo aleatório pois corre
+      o risco de vários hosts estarem “escutando” o barramento, e ao ficar disponível todos eles mandarem sinais ao mesmo tempo, ocorrendo assim
+      colisões, com este random time ambos os hosts conseguiriam enviar os dados em times diferentes diminuindo assim o risco de colisão.
+      
+    - Colisões são consideradas um problema, ou um erro de transmissão, apenas quando ocorrem mais de 16 vezes consecutivas, ou seja, se um determinado nó tenta retransmitir um mesmo frame/quadro mais de 16 vezes, resultando sempre em uma colisão, então tal transmissão é cancelada e passa a ser considerada um grande problema.
+
+* CSMA/CA:
+  - Surge com aprimoramentos no algoritmo anterior, mudando apenas o final de CD(Collision Detection) para CA(Collision Avoidance) ou seja, 
+    ao invés de esperar a colisão ocorrer ele tem o objetivo de “Prevenir/anular” , visando as redes wireless pois o algoritmo anterior não
+    se encaixa bem em redes sem fio pela forma como ele detecta as colisões (em CSMA/CD é preciso uma medida fixa, do posto A ao ponto B) 
+    coisa que não ocorre em redes wireless, aonde um celular/notebook sempre vai estar em movimentos pelo meio físico, impossibilitando 
+    o funcionamento do algoritmo anterior.
+    
+  - O trabalho está bem enxugado pois o assunto é bem vasto, links bons utilizados para pesquisa e anotado para futuras consultas:
+  - SubCamada MAC: https://www.youtube.com/watch?v=oByke8M8RLA&list=PLy_9Ks9_s8qGOjMo7mevSgXKRtin6olCA
