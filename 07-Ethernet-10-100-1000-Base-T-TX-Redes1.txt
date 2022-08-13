@@ -1,0 +1,55 @@
+* IFSP ~ Redes I - Trabalho para aula Assíncrona.
+* Data: 30/09/2021
+* Material mais legível em docx: 
+https://docs.google.com/document/d/1rXj6RFRddB-9RvtWh3tZJnMbe1g4sXE9/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
+
+* Assunto: Ethernet - 10/100/1000 Base T e TX.
+
+* Introdução:
+  - Com o passar dos anos surge novamente a necessidade de evoluir a tecnologia, sendo assim:
+    [10Base2 -> 10Base5 -> 10BaseT -> 100Base-T -> 1000Base-T -> 1000Base-TX]
+  - Continuando com as mesmas referências, porém agora mudando do antigo “Cabo coaxial” para o “Cabo par Trançado” por isso o “T”.
+  - Obs: A evolução desta tecnologia foi bem rápida, começando pelo 10BaseT, mudando para 100BaseT e rapidamente 1000BaseT e 1000BaseTX.
+
+* Referência/alusão a:
+  - 10/100/1000 Mbits/seg.
+  - Banda base.
+  - T: Par trançado (limite máximo de distância recomendado: 100 metros).
+  
+* Mundança e Comparativa:
+  Surge com a necessidade de melhorias das tecnologias ethernet banda base anteriores! Com a mudança do cabo coaxial para o par trançado, 
+  foi possível melhorar a velocidade de transferência de dados, sendo assim:
+  
+  - 10/100BaseT:
+    Inicialmente, surge essas duas tecnologias que vão cair em desuso em pouco tempo pois o avanço se deu bem rápido, os nomes faz a mesmas 
+    referências anteriores (10Mbits/s e 100Mbits/s), operando também na banda base e mudando apenas o tipo de cabo, do antigo coaxial para 
+    o novo par trançado, porém com algumas diferenças em relação a referenciação incorreta, pois na tecnologia 10Base-T a faixa de transferência 
+    se dá em até 800Kbits/s, devido a correções de erros, são mandados bits de correção em conjunto dos dados, por isso a diferença entre a teoria 
+    e a prática. 
+    
+  - 1000BaseT (Gigabit Ethernet):
+    Recomenda-se utilizar o cabo CAT5e, aonde ele trabalha na frequência de até 100MHz para a transmissão de dados, chegando nos 1000Mbits/s (1Gbits/s) 
+    utilizando 4 pares, aonde a transferência dos bits/dados se dão simultaneamente, ou seja em modo full-duplex, na porta todos os pares devem transmitir 
+    e receber os dados de maneira simultânea, sendo assim 250Mbits/s por par (4 x 250 = 1000), com desvantagem em relação as possíveis colisões de dados, 
+    por trabalhar de maneira simultânea.
+    - Padrão regulamentador: IEEE 802.3ab
+    
+  - 1000BaseTX (Gigabit Ethernet):
+    Recomenda-se utilizar os Cabos CAT6 e CAT7, trabalhando na frequência de até 200/250MHz e 500/600MHz, respectivamente para a transmissão dos bits, 
+    chegando nos mesmos 1000Mbits/s (1Gbits/s) da tecnologia 1000baseT e também utilizando os 4 pares, porém com uma diferença na eletrônica envolvida, 
+    pois diferentemente da tecnologia anterior, está utiliza 2 pares para transmitir os bits/dados e 2 pares para receber! Ou seja em modo simplex, 
+    500Mbits/s por par (2 x 500 = 1000), com a vantagem em corrigir as colisões que aconteciam na tecnologia anterior, tornando assim a eletrônica 
+    mais simples, barata e com menos colisão de dados, uma vez que cada par trançado trabalha em uma única direção.
+    - Obs: Opera em modo simplex, porém o padrão de comunicação da interface também é full-duplex, pois todos os transmissores funcionam ao mesmo tempo.
+    - Padrão regulamentador: TIA/EIA-854
+    
+--> Resumindo: 
+  - Na tecnologia 1000BaseT, o passivo é mais barato (Cabo Cat5e) e o ativo é mais complexo (eletrônica) e caro, e já no padrão 1000Base-TX 
+  o passivo é mais caro (Cabos CAT6 & CAT7) e o ativo mais barato.
+
+  - Obs: Os dois trabalham na faixa dos 100 Ohms de impedância, e recomenda-se utilizar nas 2 tecnologias o limite máximo de 100 metros por segmento.
+
+--> Conclusão: 
+  - A ideia do 1000BASE-TX era a de permitir a fabricação de placas e interfaces mais baratas, pois cada par do cabo trafegaria em modo simplex, 
+    diferente do 1000BASE-T, que, por utilizar full-duplex a cada par, tornaria as placas mais caras, porém o projeto ficou estagnado e foi ligeiramente 
+    esquecido já faz alguns anos, e hoje em dia ainda se utiliza a tecnologia Ethernet – 1000BaseT.
