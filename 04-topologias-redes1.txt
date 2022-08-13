@@ -1,0 +1,31 @@
+* IFSP ~ Redes I - Trabalho para aula Assíncrona.
+* Data: 02/09/2021
+* Material mais legível em docx: https://docs.google.com/document/d/1smADT7aBokPECZxzBNJfOOz1-SKoeK9t/edit?usp=sharing&ouid=114676812416023393208&rtpof=true&sd=true
+* Assunto: Topologias (Disposição física da rede) - "grafos físico".
+
+--> Conceito: Layout físico utilizado para conectar os nós de uma rede.
+
+* Topologia Bus (Barramento):
+  - Consiste, basicamente de um par metálico aonde os diversos nós da rede são conectados, 
+    aonde todos os computadores conectados no barramento sentem os sinais (sendo ele elétrico ou fibra óptica).
+  
+* Topologia Ring (Anel):
+  - Os computadores são conectados ao meio físico em forma de anel (como o próprio nome sugere).
+  
+* Topologia Star (Estrela):
+  - Os computadores são conectados a um concentrador, aonde ele envia aos IP’s correspondentes 
+    a tal informação (requisição/resposta).
+  
+* Topologia Mesh (Malha):
+  - Cada um dos nós são conectados/interligados em todos os PC’s da rede local (Formando uma estrela de davi).
+  - Obs: Muito utilizado entre os roteadores de internet, aonde vários são ligados entra si (roteadores e repetidores) 
+    e além dos repetidores, cabos ethernet no PC.
+    
+* Topologia Celular (Rádio):
+  - Na topologia de conexão celular, presume-se a existência de células de transmissão de dados e a conectividade 
+    é estabelecida pelo nó à célula.
+  - Obs: Um exemplo bem evidente é a conexão de nossos aparelhos celulares a uma telefonia.
+
+
+--> Conclusão: Hoje em dia, não é necessariamente obrigado a adotar apenas um modelo, é bem comum ser encontrado 
+    várias dessas topologias trabalhando em conjunto, observe ao seu redor e verás, na informática se dá o nome de “Topologia Híbridas”.
