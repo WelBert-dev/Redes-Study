@@ -1,0 +1,13 @@
+Dispositivos “Roteadores”:
+- Hub: Equipamento burro, apenas replica os dados em todas as portas conectadas.
+
+- Bridge: Learning, utilizado para separar duas estações afim de diminuir as possíveis colisões de dados (Switch porem com menos entradas).
+
+- Switch L2: Learning, porém em todas as portas (Evolução do Bridge).
+
+- Switch L3: Pode fazer o papel de um Roteador, com modificações via software com maior poder de processamento.
+
+- Roteador: Computador inteligente que “entende” frames contendo protocolos da camada superior a camada de Enlace e Física (IP por exemplo). 
+  Elemento que “agrega” LAN’s suportando diferentes estilos de LAN’s (Não estende domínio de Broadcast) 
+
+- Moldem: Modulador de sinal analógico e digital
